@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p style="color:green">you sussesfully udpated </p>
+<h3>
+	title :<%=@article.title %></h3>
+<p> comment </br>
+	<%= @article.text %></br>
+	<%= link_to 'edit', edit_article_path(@article) %>
+	<%= link_to 'back', articles_path %>
+</p>
+
+
+</body>
+</html>

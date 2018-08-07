@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>Editing page </h2>
+
+<%= form_for :article, url: article_path(@article), method: :patch do |f| %>
+ <% if @article.errors.any? %>
+ <h3><%= pluralize(@article.errors.count,"error") %> prohibited this article from saving 
+ </h3>
+ <ul>
+ <% @article.errors.full_messages.each do |msg | %>
+ <li><%= msg %></li>
+ <% end %>
+</ul>
+ <% end %>
+<p>  <%= f.label :title%></p>
+	<p>
+		<%= f.text_field :title %>
+</p>
+<p>
+	<%= f.label :comment %>
+	<br>
+	<%= f.text_area :text %>
+</p>
+<p>
+	<%= f.submit "update" %></p>
+	<% end %>
+	<%= link_to 'All comments ', articles_path %>
+</body>
+</html>
