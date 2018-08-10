@@ -8,7 +8,7 @@
 
 <%= form_for :article , url: articles_path do |f| %>
  <% if @article.errors.any? %>
- <h3><%= pluralize(@article.errors.count,"error") %> prohibited this article from saving 
+ <h3 style="color:red"><%= pluralize(@article.errors.count,"error") %> prohibited this article from saving 
  </h3>
  <ul>
  <% @article.errors.full_messages.each do |msg | %>
@@ -16,18 +16,18 @@
  <% end %>
 </ul>
  <% end %>
-<p>  <%= f.label :title%></p>
+<p>  <%= f.label :category%></p>
 	<p>
 		<%= f.text_field :title %>
 </p>
 <p>
-	<%= f.label :comment %>
+	<%= f.label :question %>
 	<br>
 	<%= f.text_area :text %>
 </p>
 <p>
-	<%= f.submit "post" %></p>
+	<%= f.submit "Ask" %></p>
 	<% end %>
-	<%= link_to 'All comments ', articles_path %>
+	<%= link_to 'All questions ', articles_path %>
 </body>
 </html>
