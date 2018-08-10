@@ -9,26 +9,10 @@
 	category :<%=@article.title %></h3>
 <p> question :</br>
 	<%= @article.text %></br></p>
-	 <h4>Answers </h4>
-	  <%=@article.answers.each do |f| %>
-	  <p>
-	  	<%= f.commenter %> :<%= f.body %>
-	  	<%end %>
-	  </p>
+	 <h4><i>Answers </i></h4>
+	 <%= render @article.answers %> 
     <h3>Answer Question</h3>
-    <%= form_with(model: [@article, @article.answers.build],local: true) do |form| %>
-    <p> <%= form.label :commenter %> </br>
-     <%= form.text_field :commenter %> 
-
-
- </p>
- <p>
-   <%= form.label :Answer %></br>
-   <%= form.text_area :body %> 
-</p> 
-<%= form.submit 'Answer' %>
-<%end %>
-
+    <%= render 'answers/form' %>
 	<%= link_to 'edit', edit_article_path(@article) %>
 	<%= link_to 'back', articles_path %>
 </p>

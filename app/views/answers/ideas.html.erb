@@ -1,0 +1,11 @@
+
+  ---for Answer error display ---
+    	<% if @article.answer.error_any? %>
+    	<%= pluralize(@article.answer.errors.count ,"errors" ) %>
+    	 happend
+    	<% @article.answers.errors.full_messges.each do |msg| %> 
+    	<ul>
+    		<li><%= msg %></li>
+    	</ul>
+    	<% end %>
+    	<%end %>   

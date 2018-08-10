@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+ <p><strong>user: </strong>
+ <%=answer.commenter %></p>
+ <strong> Answer :</strong>
+ <%=answer.body %>
+    <%= link_to 'delet' ,[answer.article,answer],
+     method: :delete ,
+     data: {confirm: 'do you realy want to delete a Answer ?'} %>
+ </p>
+  
+
+</body>
+</html>
